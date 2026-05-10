@@ -4,7 +4,7 @@ from Modules import load_data, compute_svd, plot_singular_images, plot_singular_
 
 train_imgs, train_lbls, _, _ = load_data()
 
-for d in [3, 8]:
+for d in [3, 8]: # use functions from module file to calc and print calues the task 2
     U, S, _ = compute_svd(train_imgs, train_lbls, digit=d, n_samples=400)
     plot_singular_images(U,d)
     plot_singular_values(S,d)

@@ -24,18 +24,19 @@ def plot_singular_images(U,digit):
         u = U[:,i]
         img = np.reshape(u,(28,28)).T # transform the vectror to get a nice picture
         ax.imshow(img,cmap = 'gray')
-        ax.set_title(f'$u_{i+1}$ ')
+        ax.set_title(f'$u_{i+1}$ ', fontsize=16)
         ax.axis('off')
-    fig.suptitle(f'Singular images of digit {digit}')
+    fig.suptitle(f'Singular images of digit {digit}', fontsize=16)
     plt.tight_layout()
     plt.show()
 
 def plot_singular_values(S,digit):
     plt.figure()
     plt.plot(S[:50], 'o') # plot the first 50 singular values, the rest follow the decreasing trend
-    plt.title(f'Plot over singular values {digit}')
-    plt.xlabel('Index')
-    plt.ylabel('Singular value')
+    plt.title(f'Plot over singular values for digit {digit}', fontsize=16)
+    plt.xlabel('Index', fontsize=16)
+    plt.ylabel('Singular value', fontsize=16)
+    plt.tick_params(axis='both', labelsize=16) 
     plt.grid(True)
     plt.show()
 
